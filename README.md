@@ -1,4 +1,4 @@
-## 🍓 Tic-Tac-Toe 🍊 
+## 🍋 Tic-Tac-Toe 🍊
 
 A solo project by [Michann Stoner](https://github.com/michannstoner).
 View it in action [here]!
@@ -9,11 +9,11 @@ View it in action [here]!
 ----IMAGES / GIFS HERE ----
 
 
-## Functionality
+### Functionality
 
 
 
-## Technologies
+### Technologies
 
 1. HTML
 2. CSS
