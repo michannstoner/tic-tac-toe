@@ -1,0 +1,37 @@
+* {
+  border: 1px solid red;
+};
+
+body {
+  display: flex;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+/* GAME BOARD */
+
+.display-container {
+  display: flex;
+}
+
+.player-one-container,
+.player-two-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 60em;
+  width: 20em;
+
+}
+
+.game-play-section {
+  height: 60em;
+  width: 50em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify
+};
