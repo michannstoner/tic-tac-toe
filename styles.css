@@ -1,5 +1,7 @@
 * {
-  border: 1px solid red;
+  /* border: 1px solid red; */
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15pt;
 };
 
 body {
@@ -11,11 +13,20 @@ html {
   width: 100%;
 }
 
+h1 {
+  font-size: 20pt;
+}
+
+h3 {
+  font-size: 18pt;
+}
+
 /* GAME BOARD */
 
 .display-container {
   display: flex;
 }
+
 
 .player-one-container,
 .player-two-container {
@@ -23,8 +34,9 @@ html {
   flex-direction: column;
   align-items: center;
   height: 60em;
-  width: 20em;
-
+  width: 20vw;
+  background-image: linear-gradient( #C6D2E3, #F5A2B2, #EAA52A);
+  background-attachment: fixed;
 }
 
 .game-play-section {
@@ -33,5 +45,43 @@ html {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify
-};
+}
+
+.game-grid {
+  display: grid;
+  grid-template-columns: 20% 20% 20%;
+  grid-template-rows: 20% 20% 20%;
+  justify-content: center;
+  align-items: center;
+  margin-top: 18%;
+  height: 30em;
+  width:30em;
+}
+
+.square {
+  height: 6em;
+  width: 6em;
+  margin: 0;
+  border: 2px solid;
+  border-color: #C6D2E3
+}
+
+.winner.visibility-hidden {
+  display: none;
+}
+
+/* .square.top {
+  border-top: none;
+}
+
+.square.bottom {
+  border-bottom: none;
+}
+
+.square.right {
+  border-right: none;
+}
+
+.square.left {
+  border-left: none;
+} */
