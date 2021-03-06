@@ -9,20 +9,40 @@ var turnDisplay = document.querySelector('#turn-display');
 var winnerDisplay = document.querySelector('#winner-display');;
 
 
-gameGrid.addEventListener('click', placeToken);
 
 
 
+// ~~EVENT LISTENERS/HANDLERS~~
+gameGrid.addEventListener('click', function(event) {
+  placeToken(event);
+});
+
+
+
+
+
+
+// ~~FUNCTIONS~~
+// changeTurn() {
+//   turnDisplay.innerText = `It's ${game.currentPlayer.token}'s turn!`
+//   };
 
 
 function placeToken(event) {
-turnDisplay.innerText = `It's ${game.currentPlayer.token}'s turn!`
-var squareClicked = event.target;
-if (squareClicked.innerText === '') {
-   squareClicked.innerText = `${game.currentPlayer.token}`; 
+  var squareClicked = event.target;
+
+  if (squareClicked.innerText === '') {
+    squareClicked.innerText = `${game.currentPlayer.token}`; 
+    turnDisplay.innerText = `It's ${game.currentPlayer.token}'s turn!`
+  } else if (squareClicked) {
+      gameGrid.removeEventListener();
   }
   game.switchPlayer();
+  game.checkWinner();
 };
+
+
+
 
 
 
@@ -41,5 +61,6 @@ function hide(element) {
 //   winnerDisplay.innerText = `${game.currentPlayer.token} wins!`
 //   if (game.activePlayer.winner) {
 //     show(winnerDisplay);
+//     hide(turnDisplay);
 //   }
 // };
