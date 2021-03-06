@@ -1,4 +1,4 @@
-## 🍋 Tic-Tac-Toe 🍊
+## 🌸 Tic-Tac-Toe 🌼
 
 A solo project by [Michann Stoner](https://github.com/michannstoner).
 View it in action [here]!
