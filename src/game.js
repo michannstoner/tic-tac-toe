@@ -3,12 +3,19 @@ class Game {
     this.playerOne = new Player('one', '🌸');
     this.playerTwo = new Player('two', '🌼');
     this.currentPlayer = this.playerOne;
-    this.outcomes = [
+    this.draw = false;
+    this.board = [
       '', '', '',
       '', '', '', 
       '', '', ''
     ];
   };
+
+  updateBoard(space) {
+    var boardSpace = parseInt(space);
+    this.board[boardSpace] = this.currentPlayer.token;
+    console.log(this.board);
+  }
 
   switchPlayer() {
     if (this.currentPlayer === this.playerOne) {
@@ -19,25 +26,29 @@ class Game {
   };
 
   checkWinner() {
-    for (var i = 0; i < this.outcomes; i++) {
-    if (this.outcomes[0] === '🌸' && this.outcomes[1] === '🌸' && this.outcomes[2] === '🌸' ||
-        this.outcomes[3] === '🌸' && this.outcomes[4] === '🌸' && this.outcomes[5] === '🌸' ||
-        this.outcomes[6] === '🌸' && this.outcomes[7] === '🌸' && this.outcomes[8] === '🌸' ||
-        this.outcomes[0] === '🌸' && this.outcomes[3] === '🌸' && this.outcomes[6] === '🌸' ||
-        this.outcomes[1] === '🌸' && this.outcomes[4] === '🌸' && this.outcomes[7] === '🌸' ||
-        this.outcomes[2] === '🌸' && this.outcomes[5] === '🌸' && this.outcomes[8] === '🌸' ||
-        this.outcomes[2] === '🌸' && this.outcomes[4] === '🌸' && this.outcomes[6] === '🌸') {
-          console.log('player one wins!');
+    for (var i = 0; i < this.board.length; i++) {
+    if (this.board[0] === '🌸' && this.board[1] === '🌸' && this.board[2] === '🌸' ||
+        this.board[3] === '🌸' && this.board[4] === '🌸' && this.board[5] === '🌸' ||
+        this.board[6] === '🌸' && this.board[7] === '🌸' && this.board[8] === '🌸' ||
+        this.board[0] === '🌸' && this.board[3] === '🌸' && this.board[6] === '🌸' ||
+        this.board[1] === '🌸' && this.board[4] === '🌸' && this.board[7] === '🌸' ||
+        this.board[2] === '🌸' && this.board[5] === '🌸' && this.board[8] === '🌸' ||
+        this.board[2] === '🌸' && this.board[4] === '🌸' && this.board[6] === '🌸' ||
+        this.board[0] === '🌸' && this.board[4] === '🌸' && this.board[8] === '🌸' ) {
+          this.currentPlayer.winner = true;
+          this.currentPlayer.wins++;
           return true;
         } else if (
-        this.outcomes[0] === '🌼' && this.outcomes[1] === '🌼' && this.outcomes[2] === '🌼' ||
-        this.outcomes[3] === '🌼' && this.outcomes[4] === '🌼' && this.outcomes[5] === '🌼' ||
-        this.outcomes[6] === '🌼' && this.outcomes[7] === '🌼' && this.outcomes[8] === '🌼' ||
-        this.outcomes[0] === '🌼' && this.outcomes[3] === '🌼' && this.outcomes[6] === '🌼' ||
-        this.outcomes[1] === '🌼' && this.outcomes[4] === '🌼' && this.outcomes[7] === '🌼' ||
-        this.outcomes[2] === '🌼' && this.outcomes[5] === '🌼' && this.outcomes[8] === '🌼' ||
-        this.outcomes[2] === '🌼' && this.outcomes[4] === '🌼' && this.outcomes[6] === '🌼') {
-          console.log('player two wins!');
+        this.board[0] === '🌼' && this.board[1] === '🌼' && this.board[2] === '🌼' ||
+        this.board[3] === '🌼' && this.board[4] === '🌼' && this.board[5] === '🌼' ||
+        this.board[6] === '🌼' && this.board[7] === '🌼' && this.board[8] === '🌼' ||
+        this.board[0] === '🌼' && this.board[3] === '🌼' && this.board[6] === '🌼' ||
+        this.board[1] === '🌼' && this.board[4] === '🌼' && this.board[7] === '🌼' ||
+        this.board[2] === '🌼' && this.board[5] === '🌼' && this.board[8] === '🌼' ||
+        this.board[2] === '🌼' && this.board[4] === '🌼' && this.board[6] === '🌼' ||
+        this.board[0] === '🌼' && this.board[4] === '🌼' && this.board[8] === '🌼') {
+          this.currentPlayer.winner = true;
+          this.currentPlayer.wins++;
           return true;
         } else {
           return false;
@@ -45,7 +56,10 @@ class Game {
       } 
   };
 
-//   resetBoard(event) {
-//   gameGrid.setTimeout(squares.innerText = '', 2000)
-//   }
+  checkDraw() {
+    if (this.board.every(x => x === this.playerOne.token || x === this.playerTwo.token)) {
+      this.draw = true;
+    }
+    console.log(this.draw);
+  }
 };
