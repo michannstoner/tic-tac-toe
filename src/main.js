@@ -4,11 +4,9 @@ var gameGrid = document.querySelector('#game-play-grid');
 var playerOneWins = document.querySelector('#player-one-win-display')
 var playerTurn = document.querySelector('#turn-display');
 var playerTwoWins = document.querySelector('#player-two-win-display');
-var squares = document.querySelectorAll('.square');
+// var squares = document.querySelectorAll('.square');
 var turnDisplay = document.querySelector('#turn-display');
 var winnerDisplay = document.querySelector('#winner-display');;
-
-
 
 
 
@@ -16,7 +14,6 @@ var winnerDisplay = document.querySelector('#winner-display');;
 gameGrid.addEventListener('click', function(event) {
   placeToken(event);
 });
-
 
 
 // ~~FUNCTIONS~~
@@ -33,18 +30,29 @@ function placeToken(event) {
   game.checkWinner();
   declareWinner();
   game.checkDraw();
+  declareDraw();
   game.switchPlayer();
 };
 
+//can I put all of these functions 👇🏼 into another function and call THAT function in ^^^ this one up here? 
 function declareWinner() {
   if (game.playerOne.winner) {
     show(winnerDisplay);
     hide(turnDisplay);
     winnerDisplay.innerText = `${game.playerOne.token} wins!` 
+    
   } else if (game.playerTwo.winner) {
     show(winnerDisplay);
     hide(turnDisplay);
     winnerDisplay.innerText = `${game.playerTwo.token} wins!`
+  } 
+};
+
+function declareDraw() {
+  if (game.draw) {
+    show(winnerDisplay);
+    hide(turnDisplay);
+    winnerDisplay.innerText = 'It\'s a draw!'
   }
 };
 
