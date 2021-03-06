@@ -18,6 +18,7 @@ class Game {
   
   }
   checkWinner() {
+  
 
   }
   resetBoard() {
