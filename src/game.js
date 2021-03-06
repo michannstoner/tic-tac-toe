@@ -14,14 +14,15 @@ class Game {
   updateBoard(space) {
     var boardSpace = parseInt(space);
     this.board[boardSpace] = this.currentPlayer.token;
-    console.log(this.board);
   }
 
   switchPlayer() {
     if (this.currentPlayer === this.playerOne) {
       this.currentPlayer = this.playerTwo;
+      turnDisplay.innerText = `It's ${game.currentPlayer.token}'s turn!`
   } else {
       this.currentPlayer = this.playerOne;
+      turnDisplay.innerText = `It's ${game.currentPlayer.token}'s turn!`
     }
   };
 
@@ -35,8 +36,9 @@ class Game {
         this.board[2] === '🌸' && this.board[5] === '🌸' && this.board[8] === '🌸' ||
         this.board[2] === '🌸' && this.board[4] === '🌸' && this.board[6] === '🌸' ||
         this.board[0] === '🌸' && this.board[4] === '🌸' && this.board[8] === '🌸' ) {
-          this.currentPlayer.winner = true;
-          this.currentPlayer.wins++;
+          this.playerOne.winner = true;
+          this.playerOne.wins++;
+          console.log(this.playerOne.wins);
           return true;
         } else if (
         this.board[0] === '🌼' && this.board[1] === '🌼' && this.board[2] === '🌼' ||
@@ -47,8 +49,8 @@ class Game {
         this.board[2] === '🌼' && this.board[5] === '🌼' && this.board[8] === '🌼' ||
         this.board[2] === '🌼' && this.board[4] === '🌼' && this.board[6] === '🌼' ||
         this.board[0] === '🌼' && this.board[4] === '🌼' && this.board[8] === '🌼') {
-          this.currentPlayer.winner = true;
-          this.currentPlayer.wins++;
+          this.playerTwo.winner = true;
+          this.playerTwo.wins++;
           return true;
         } else {
           return false;
@@ -60,5 +62,5 @@ class Game {
     if (this.board.every(x => x === this.playerOne.token || x === this.playerTwo.token)) {
       this.draw = true;
     }
-  }
+  };
 };

@@ -20,25 +20,33 @@ gameGrid.addEventListener('click', function(event) {
 
 
 // ~~FUNCTIONS~~
-
-
 function placeToken(event) {
   var squareClicked = event.target;
   var squareClickedId = event.target.id;
  
   if (squareClicked.innerText === '') {
     squareClicked.innerText = `${game.currentPlayer.token}`; 
-    turnDisplay.innerText = `It's ${game.currentPlayer.token}'s turn!`
     game.updateBoard(squareClickedId);
   } else if (squareClicked) {
     gameGrid.removeEventListener('click', placeToken);
   }
   game.checkWinner();
+  declareWinner();
   game.checkDraw();
   game.switchPlayer();
 };
 
-
+function declareWinner() {
+  if (game.playerOne.winner) {
+    show(winnerDisplay);
+    hide(turnDisplay);
+    winnerDisplay.innerText = `${game.playerOne.token} wins!` 
+  } else if (game.playerTwo.winner) {
+    show(winnerDisplay);
+    hide(turnDisplay);
+    winnerDisplay.innerText = `${game.playerTwo.token} wins!`
+  }
+};
 
 function show(element) {
   element.classList.remove('hidden');
@@ -46,15 +54,4 @@ function show(element) {
 
 function hide(element) {
   element.classList.add('hidden');
-}
-
-
-
-
-// function declareWinner() {
-//   winnerDisplay.innerText = `${game.currentPlayer.token} wins!`
-//   if (game.activePlayer.winner) {
-//     show(winnerDisplay);
-//     hide(turnDisplay);
-//   }
-// };
+};
