@@ -15,9 +15,14 @@ class Game {
     ];
   }
   switchPlayer() {
-  
-  }
+  if (this.currentPlayer === this.playerOne) {
+    this.currentPlayer = this.playerTwo;
+  } else {
+    this.currentPlayer = this.playerOne;
+    }
+  };
   checkWinner() {
+
   
 
   }
