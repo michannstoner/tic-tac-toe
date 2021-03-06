@@ -68,6 +68,6 @@ p {
   border-color: #C6D2E3
 }
 
-.winner.visibility-hidden {
+.hidden {
   display: none;
 }
