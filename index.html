@@ -11,16 +11,16 @@
 <body>
   <section class="display-container" id="main-page">
     <aside class="player-one-container">
-      <h3 class="player-one">🌸</h3>
+      <h3 class="player-one-name">🌸</h3>
       <article class="win-container">
-        <p class="wins">0</p>
+        <p class="one-wins" id="player-one-win-display">0</p>
       </article>
     </aside>
     <section class="game-play-section">
-      <h1 class="player-turn">It's 🌸's turn</h1>
-      <h2 class="winner visibility-hidden" id="winner-display">
+      <h1 class="player-turn" id="turn-display">It's 🌸's turn</h1>
+      <h1 class="winner visibility-hidden" id="winner-display">
         Winner goes here!
-      </h2>
+      </h1>
       <article class="game-grid" id="game-play-grid">
         <div class="square left top" id="1"></div>
         <div class="square center top" id="2"></div>
@@ -34,12 +34,14 @@
       </article>
      </section>
     <aside class="player-two-container">
-      <h3 class="player-two">🌼</h3>
-      <article class="win-container" id="player-two-wins">
-        <p class="wins">0</p>
+      <h3 class="player-two-name">🌼</h3>
+      <article class="win-container">
+        <p class="two-wins" id="player-two-win-display">0</p>
       </article>
     </aside>
   </section>
-  
+  <script src="./src/game.js"></script>
+  <script src="./src/player.js"></script>
+  <script src="./src/main.js"></script>
 </body>
 </html>
