@@ -40,11 +40,12 @@ function declareWinner() {
     show(winnerDisplay);
     hide(turnDisplay);
     winnerDisplay.innerText = `${game.playerOne.token} wins!` 
-    
+    playerOneWins.innerText = `${game.playerOne.wins}`
   } else if (game.playerTwo.winner) {
     show(winnerDisplay);
     hide(turnDisplay);
     winnerDisplay.innerText = `${game.playerTwo.token} wins!`
+    playerTwoWins.innerText = `${game.playerTwo.wins}`
   } 
 };
 
