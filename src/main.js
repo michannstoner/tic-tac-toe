@@ -19,30 +19,24 @@ gameGrid.addEventListener('click', function(event) {
 
 
 
-
-
-
 // ~~FUNCTIONS~~
-// changeTurn() {
-//   turnDisplay.innerText = `It's ${game.currentPlayer.token}'s turn!`
-//   };
 
 
 function placeToken(event) {
   var squareClicked = event.target;
-
+  var squareClickedId = event.target.id;
+ 
   if (squareClicked.innerText === '') {
     squareClicked.innerText = `${game.currentPlayer.token}`; 
     turnDisplay.innerText = `It's ${game.currentPlayer.token}'s turn!`
+    game.updateBoard(squareClickedId);
   } else if (squareClicked) {
-      gameGrid.removeEventListener();
+    gameGrid.removeEventListener('click', placeToken);
   }
-  game.switchPlayer();
   game.checkWinner();
+  game.checkDraw();
+  game.switchPlayer();
 };
-
-
-
 
 
 
