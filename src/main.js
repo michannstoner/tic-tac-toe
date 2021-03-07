@@ -35,44 +35,42 @@ function placeToken(event) {
     gameGrid.removeEventListener('click', placeToken);
   }
   game.checkWinner();
-  declareWinner();
-  game.checkDraw();
-  declareDraw();
+  declareWinnerOrDraw();
   game.switchPlayer();
 };
 
 //can I put all of these functions 👇🏼 into another function and call THAT function in ^^^ this one up here? 
-function declareWinner() {
+function declareWinnerOrDraw() {
   if (game.playerOne.winner) {
     show(winnerDisplay);
     hide(turnDisplay);
     winnerDisplay.innerText = `${game.playerOne.token} wins!` 
     playerOneWins.innerText = `${game.playerOne.wins}`
     game.playerOne.saveWinsToStorage();
+    setTimeout(resetBoard, 1000);
   } else if (game.playerTwo.winner) {
     show(winnerDisplay);
     hide(turnDisplay);
     winnerDisplay.innerText = `${game.playerTwo.token} wins!`
     playerTwoWins.innerText = `${game.playerTwo.wins}`
     game.playerTwo.saveWinsToStorage();
+    setTimeout(resetBoard, 1000);
   } 
 };
 
-function declareDraw() {
-  if (game.draw) {
-    show(winnerDisplay);
-    hide(turnDisplay);
-    winnerDisplay.innerText = 'It\'s a draw!'
-    setTimeout(resetBoard, 1000);
-  }
-};
-
 function resetBoard() {
-  for (var i = 0; i < squares.length; i++) {
+    for (var i = 0; i < squares.length; i++)
     squares[i].innerText = '';
     hide(winnerDisplay);
     show(turnDisplay);
-  }
+    game.board = [
+      '', '', '',
+      '', '', '',
+      '', '', ''
+    ];
+    game.draw = false;
+    game.playerOne.winner = false;
+    game.playerTwo.winner = false;
 };
 
 function show(element) {

@@ -71,3 +71,8 @@ p {
 .hidden {
   display: none;
 }
+
+.two-wins,
+.one-wins {
+  text-align: center;
+}
