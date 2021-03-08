@@ -14,11 +14,12 @@ html {
 }
 
 h1 {
-  font-size: 20pt;
+  font-size: 30pt;
 }
 
-h3 {
-  font-size: 18pt;
+p {
+  color: #FFFFFF;
+  font-size: 25pt;
 }
 
 /* GAME BOARD */
@@ -57,7 +58,7 @@ h3 {
 }
 
 .square {
-  font-size = 25pt;
+  font-size: 16pt;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -67,6 +68,11 @@ h3 {
   border-color: #C6D2E3
 }
 
-.winner.visibility-hidden {
+.hidden {
   display: none;
+}
+
+.two-wins,
+.one-wins {
+  text-align: center;
 }
