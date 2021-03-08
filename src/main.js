@@ -85,6 +85,15 @@ function resetBoard() {
     game.playerTwo.winner = false;
 };
 
+function restartGame() {
+  localStorage.clear();
+  game.playerOne.wins = 0;
+  game.playerTwo.wins= 0;
+  playerOneWins.innerText = `${game.playerOne.wins}`;
+  playerTwoWins.innerText = `${game.playerTwo.wins}`
+  resetBoard();
+}
+
 function show(element) {
   element.classList.remove('hidden');
 };
