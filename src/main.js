@@ -9,8 +9,8 @@ var turnDisplay = document.querySelector('#turn-display');
 var winnerDisplay = document.querySelector('#winner-display');;
 
 
-
-window.addEventListener('load', displayGame);
+// EVENT LISTENERS
+window.addEventListener('load', displayScores);
 
 gameGrid.addEventListener('click', function(event) {
   placeToken(event);
@@ -19,8 +19,8 @@ gameGrid.addEventListener('click', function(event) {
 resetButton.addEventListener('click', restartGame);
 
 
-
-function displayGame() {
+// FUNCTIONS
+function displayScores() {
   playerOneWins.innerText = game.playerOne.retrieveWinsFromStorage();
   playerTwoWins.innerText = game.playerTwo.retrieveWinsFromStorage();
 }
@@ -35,11 +35,15 @@ function placeToken(event) {
     game.switchPlayer();
   } else if (squareClicked) {
     gameGrid.removeEventListener('click', placeToken);
-  }
+  };
+  checkGameStatus();  
+};
+
+function checkGameStatus() {
   game.checkWinner();
-  declareWinnerOrDraw();
   game.checkDraw();
-  declareDraw();   
+  declareWinnerOrDraw();
+  declareDraw();
 };
 
 //can I put all of these functions 👇🏼 into another function and call THAT function in ^^^ this one up here? 
@@ -68,7 +72,7 @@ function declareDraw() {
     winnerDisplay.innerText = 'It\'s a draw!' 
     setTimeout(resetBoard, 1000);
   }
-}
+};
 
 function resetBoard() {
     for (var i = 0; i < squares.length; i++)
@@ -90,7 +94,7 @@ function restartGame() {
   game.playerOne.wins = 0;
   game.playerTwo.wins= 0;
   playerOneWins.innerText = `${game.playerOne.wins}`;
-  playerTwoWins.innerText = `${game.playerTwo.wins}`
+  playerTwoWins.innerText = `${game.playerTwo.wins}`;
   resetBoard();
 }
 
