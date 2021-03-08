@@ -1,25 +1,26 @@
-// ~~VARIABLES + QUERY SELECTORS~~
 var game = new Game();
 var gameGrid = document.querySelector('#game-play-grid');
 var playerOneWins = document.querySelector('#player-one-win-display')
 var playerTurn = document.querySelector('#turn-display');
 var playerTwoWins = document.querySelector('#player-two-win-display');
+var resetButton = document.querySelector('.reset-button')
 var squares = document.querySelectorAll('.square');
 var turnDisplay = document.querySelector('#turn-display');
 var winnerDisplay = document.querySelector('#winner-display');;
 
 
 
-// ~~EVENT LISTENERS/HANDLERS~~
-window.addEventListener('load', startGame);
+window.addEventListener('load', displayGame);
 
 gameGrid.addEventListener('click', function(event) {
   placeToken(event);
 });
 
+resetButton.addEventListener('click', restartGame);
 
-// ~~FUNCTIONS~~
-function startGame() {
+
+
+function displayGame() {
   playerOneWins.innerText = game.playerOne.retrieveWinsFromStorage();
   playerTwoWins.innerText = game.playerTwo.retrieveWinsFromStorage();
 }
@@ -83,6 +84,15 @@ function resetBoard() {
     game.playerOne.winner = false;
     game.playerTwo.winner = false;
 };
+
+function restartGame() {
+  localStorage.clear();
+  game.playerOne.wins = 0;
+  game.playerTwo.wins= 0;
+  playerOneWins.innerText = `${game.playerOne.wins}`;
+  playerTwoWins.innerText = `${game.playerTwo.wins}`
+  resetBoard();
+}
 
 function show(element) {
   element.classList.remove('hidden');
