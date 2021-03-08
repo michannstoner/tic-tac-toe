@@ -22,6 +22,16 @@ p {
   font-size: 25pt;
 }
 
+button {
+  margin-top: 3%;
+  background: transparent;
+  border-radius: 8px;
+  border-style: solid;
+  border-color: #FF9ACF;
+  height: 2em;
+  width: 20%; 
+}
+
 /* GAME BOARD */
 
 .display-container {
@@ -54,7 +64,7 @@ p {
   grid-template-rows: repeat(3, 1fr); 
   justify-content: center;
   align-items: center;
-  margin-top: 10%;
+  margin-top: 5%;
 }
 
 .square {
