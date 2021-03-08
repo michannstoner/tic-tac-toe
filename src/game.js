@@ -38,7 +38,6 @@ class Game {
         this.board[0] === '🌸' && this.board[4] === '🌸' && this.board[8] === '🌸' ) {
           this.playerOne.winner = true;
           this.playerOne.wins++;
-          console.log(this.playerOne.wins);
           return true;
         } else if (
         this.board[0] === '🌼' && this.board[1] === '🌼' && this.board[2] === '🌼' ||
