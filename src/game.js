@@ -61,7 +61,7 @@ class Game {
     if (this.board.every(x => x === this.playerOne.token || x === this.playerTwo.token)) {
       this.draw = true;
     }
-  };
+  }
 };
 
 
