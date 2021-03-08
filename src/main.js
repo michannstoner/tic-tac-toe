@@ -31,12 +31,14 @@ function placeToken(event) {
   if (squareClicked.innerText === '') {
     squareClicked.innerText = `${game.currentPlayer.token}`; 
     game.updateBoard(squareClickedId);
+    game.switchPlayer();
   } else if (squareClicked) {
     gameGrid.removeEventListener('click', placeToken);
   }
   game.checkWinner();
   declareWinnerOrDraw();
-  game.switchPlayer();
+  game.checkDraw();
+  declareDraw();   
 };
 
 //can I put all of these functions 👇🏼 into another function and call THAT function in ^^^ this one up here? 
@@ -57,6 +59,15 @@ function declareWinnerOrDraw() {
     setTimeout(resetBoard, 1000);
   } 
 };
+
+function declareDraw() {
+  if (game.draw) {
+    show(winnerDisplay);
+    hide(turnDisplay);
+    winnerDisplay.innerText = 'It\'s a draw!' 
+    setTimeout(resetBoard, 1000);
+  }
+}
 
 function resetBoard() {
     for (var i = 0; i < squares.length; i++)
