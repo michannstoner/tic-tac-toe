@@ -31,9 +31,10 @@ If you want to start fresh with your win counts back at 0, no worries! Just clic
 3. CSS
 
 ### Setup
-- Fork this repository 
+- Fork [this](https://github.com/michannstoner/tic-tac-toe) repository 
 - Clone it to your local machine 
 - Open in your text editor/cd into the directories 
+- Run `open index.html` in your command line to view in browser
 
 ### Project Wins 
 I felt like I was much more comfortable dealing with local storage on this project than on a previous project. I remember previously making it feel a lot more complicated/scary than it needed to be, and I'm proud of myself for working through it. I also remember feeling very intimidated when we were first introduced to this project, and I'm proud of myself for taking some deep breaths and tackling it. 
