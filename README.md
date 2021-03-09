@@ -5,10 +5,7 @@ View it in action [here](https://michannstoner.github.io/tic-tac-toe/)!
 
 ### Description 
 A classic game of tic-tac-toe!
-
-Min Players: 2
-
-Max Players: 2
+Number of players: 2
 
 #### How to Play
 Never played tic-tac-toe before? No worries, you'll be a pro in no time! There are two players, in this case 🌸 and 🌼 , and the objective of the game is to get 3 of your tokens in a row. This can be vertical, horizontal, or diagonal. At the top of the screen, you'll see a display to show which player's turn it is.
