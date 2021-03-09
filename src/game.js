@@ -14,7 +14,7 @@ class Game {
   updateBoard(space) {
     var boardSpace = parseInt(space);
     this.board[boardSpace] = this.currentPlayer.token;
-  }
+  };
 
   switchPlayer() {
     if (this.currentPlayer === this.playerOne) {
@@ -41,29 +41,29 @@ class Game {
     } else {
       return false;
     }
-  }
+  };
 
   checkWinner() {
     for (var i = 0; i < this.board.length; i++) { 
       var playerOne = this.testWinConditions(this.board, '🌸');
       var playerTwo = this.testWinConditions(this.board, '🌼');
     if (playerOne) {
-          this.playerOne.winner = true;
-          this.playerOne.wins++;
-          return true;
-        } else if (playerTwo) {
-          this.playerTwo.winner = true;
-          this.playerTwo.wins++;
-          return true;
-        } else {
-          return false;
+        this.playerOne.winner = true;
+        this.playerOne.wins++;
+        return true;
+    } else if (playerTwo) {
+        this.playerTwo.winner = true;
+        this.playerTwo.wins++;
+        return true;
+    } else {
+        return false;
       }
     } 
   };
 
   checkDraw() {
-    if (this.board.every(x => x === this.playerOne.token || x === this.playerTwo.token)) {
-      this.draw = true;
+    if (this.board.every(x => x === this.playerOne.token || x === this. playerTwo.token)) {
+        this.draw = true;
     }
   }
 };
