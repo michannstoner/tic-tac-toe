@@ -48,24 +48,24 @@ function checkGameStatus() {
 
 function declareWinner() {
   if (game.playerOne.winner) {
-    changeDisplay();
-    winnerDisplay.innerText = `${game.playerOne.token} wins!`;
-    game.playerOne.saveWinsToStorage();
-    setTimeout(resetBoard, 1000);
+      changeDisplay();
+      winnerDisplay.innerText = `${game.playerOne.token} wins!`;
+      game.playerOne.saveWinsToStorage();
+      setTimeout(resetBoard, 1000);
   } else if (game.playerTwo.winner) {
-    changeDisplay();
-    winnerDisplay.innerText = `${game.playerTwo.token} wins!`;
-    game.playerTwo.saveWinsToStorage();
-    setTimeout(resetBoard, 1000);
+      changeDisplay();
+      winnerDisplay.innerText = `${game.playerTwo.token} wins!`;
+      game.playerTwo.saveWinsToStorage();
+      setTimeout(resetBoard, 1000);
   };
   updatePlayerScores();
 };
 
 function declareDraw() {
   if (game.draw) {
-    changeDisplay();
-    winnerDisplay.innerText = 'It\'s a draw!' 
-    setTimeout(resetBoard, 1000);
+      changeDisplay();
+      winnerDisplay.innerText = 'It\'s a draw!' 
+      setTimeout(resetBoard, 1000);
   }
 };
 

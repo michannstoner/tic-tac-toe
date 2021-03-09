@@ -26,35 +26,39 @@ class Game {
     }
   };
 
+  testWinConditions(board, token) {
+   if (
+      board[0] === token && board[1] === token && board[2] === token ||
+      board[3] === token && board[4] === token && board[5] === token ||
+      board[6] === token && board[7] === token && board[8] === token ||
+      board[0] === token && board[3] === token && board[6] === token ||
+      board[1] === token && board[4] === token && board[7] === token ||
+      board[2] === token && board[5] === token && board[8] === token ||
+      board[2] === token && board[4] === token && board[6] === token ||
+      board[0] === token && board[4] === token && board[8] === token
+    ) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
   checkWinner() {
-    for (var i = 0; i < this.board.length; i++) {
-    if (this.board[0] === '🌸' && this.board[1] === '🌸' && this.board[2] === '🌸' ||
-        this.board[3] === '🌸' && this.board[4] === '🌸' && this.board[5] === '🌸' ||
-        this.board[6] === '🌸' && this.board[7] === '🌸' && this.board[8] === '🌸' ||
-        this.board[0] === '🌸' && this.board[3] === '🌸' && this.board[6] === '🌸' ||
-        this.board[1] === '🌸' && this.board[4] === '🌸' && this.board[7] === '🌸' ||
-        this.board[2] === '🌸' && this.board[5] === '🌸' && this.board[8] === '🌸' ||
-        this.board[2] === '🌸' && this.board[4] === '🌸' && this.board[6] === '🌸' ||
-        this.board[0] === '🌸' && this.board[4] === '🌸' && this.board[8] === '🌸' ) {
+    for (var i = 0; i < this.board.length; i++) { 
+      var playerOne = this.testWinConditions(this.board, '🌸');
+      var playerTwo = this.testWinConditions(this.board, '🌼');
+    if (playerOne) {
           this.playerOne.winner = true;
           this.playerOne.wins++;
           return true;
-        } else if (
-        this.board[0] === '🌼' && this.board[1] === '🌼' && this.board[2] === '🌼' ||
-        this.board[3] === '🌼' && this.board[4] === '🌼' && this.board[5] === '🌼' ||
-        this.board[6] === '🌼' && this.board[7] === '🌼' && this.board[8] === '🌼' ||
-        this.board[0] === '🌼' && this.board[3] === '🌼' && this.board[6] === '🌼' ||
-        this.board[1] === '🌼' && this.board[4] === '🌼' && this.board[7] === '🌼' ||
-        this.board[2] === '🌼' && this.board[5] === '🌼' && this.board[8] === '🌼' ||
-        this.board[2] === '🌼' && this.board[4] === '🌼' && this.board[6] === '🌼' ||
-        this.board[0] === '🌼' && this.board[4] === '🌼' && this.board[8] === '🌼') {
+        } else if (playerTwo) {
           this.playerTwo.winner = true;
           this.playerTwo.wins++;
           return true;
         } else {
           return false;
-        }
-      } 
+      }
+    } 
   };
 
   checkDraw() {
