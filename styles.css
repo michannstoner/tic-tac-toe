@@ -11,7 +11,9 @@ html {
 body {
   display: flex;
   height: 20em;
-  width: 80%;
+  width: 50%;
+  background-image: linear-gradient( #C6D2E3, #F5A2B2, #EAA52A);
+  background-attachment: fixed;
 }
 
 h1 {
@@ -46,8 +48,6 @@ button {
   align-items: center;
   height: 60em;
   width: 20vw;
-  background-image: linear-gradient( #C6D2E3, #F5A2B2, #EAA52A);
-  background-attachment: fixed;
 }
 
 .game-play-section {
