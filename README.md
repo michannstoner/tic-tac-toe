@@ -5,6 +5,7 @@ View it in action [here](https://michannstoner.github.io/tic-tac-toe/)!
 
 ### Description 
 A classic game of tic-tac-toe!
+
 Number of players: 2
 
 #### How to Play
