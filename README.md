@@ -1,10 +1,11 @@
-## 🌸 Tic-Tac-Toe 🌼
+## Tic-Tac-Toe
 
 A solo project by [Michann Stoner](https://github.com/michannstoner).
 View it in action [here]!
 
 ### Overview
-<img src="https://user-images.githubusercontent.com/76269802/110537718-48f55780-80e0-11eb-8ed6-bc0745b8186d.gif" width="480" height="308"/>
+![](https://media.giphy.com/media/D2MANGHaL8ALwxUrkv/giphy.gif)
+
 
 
 ### Functionality
