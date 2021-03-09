@@ -62,7 +62,7 @@ class Game {
   };
 
   checkDraw() {
-    if (this.board.every(x => x === this.playerOne.token || x === this. playerTwo.token)) {
+    if (this.board.every(x => x === this.playerOne.token || x === this. playerTwo.token) && !this.checkWinner()) {
         this.draw = true;
     }
   }
