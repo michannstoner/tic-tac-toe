@@ -5,7 +5,9 @@ View it in action [here](https://michannstoner.github.io/tic-tac-toe/)!
 
 ### Description 
 A classic game of tic-tac-toe!
+
 Min Players: 2
+
 Max Players: 2
 
 #### How to Play
