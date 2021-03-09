@@ -1,8 +1,12 @@
 * {
-  /* border: 1px solid red; */
   font-family: 'Montserrat', sans-serif;
   font-size: 15pt;
-};
+}
+
+html {
+  height: 100%;
+  width: 100%;
+}
 
 body {
   display: flex;
@@ -20,7 +24,7 @@ p {
 }
 
 button {
-  margin-top: 3%;
+  margin-top: 7%;
   background: transparent;
   border-radius: 8px;
   border-style: solid;
@@ -34,7 +38,6 @@ button {
 .display-container {
   display: flex;
 }
-
 
 .player-one-container,
 .player-two-container {
