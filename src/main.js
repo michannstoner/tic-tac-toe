@@ -52,7 +52,7 @@ function declareWinner() {
       game.playerOne.saveWinsToStorage();
       setTimeout(resetBoard, 1000);
   } else if (game.playerTwo.winner) {
-      changeDisplay();
+      changeDisplay(winnerDisplay, turnDisplay);
       winnerDisplay.innerText = `${game.playerTwo.token} wins!`;
       game.playerTwo.saveWinsToStorage();
       setTimeout(resetBoard, 1000);
