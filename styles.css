@@ -45,16 +45,22 @@ button:hover {
   align-items: center;
   height: 20vh;
   width: 25vw;
-  margin-top: 15%;
+  margin-top: 3%;
   color: #FFFFFF;
   font-size: 20pt;
 }
+
+.player-one-name,
+.player-two-name {
+  margin-bottom: 45%;
+}
+
 
 .two-wins,
 .one-wins {
   display: flex;
   align-items: center;
-  font-size: 30pt;
+  font-size: 40pt;
 }
 
 .game-play-section {
