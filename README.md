@@ -4,7 +4,15 @@ A solo project by [Michann Stoner](https://github.com/michannstoner).
 View it in action [here]!
 
 ### Overview
+
+#### Winner Display
 ![](https://media.giphy.com/media/D2MANGHaL8ALwxUrkv/giphy.gif)
+
+#### Draw Display
+![](https://media.giphy.com/media/Ftz6F1dmd4CmnNDKlR/giphy.gif)
+
+#### Reset Scores
+![](https://media.giphy.com/media/dc53xwr1hPnyETRUpR/giphy.gif)
 
 
 
