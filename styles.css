@@ -70,7 +70,7 @@ button {
 
 .square {
   position: relative;
-  font-size: 16px;
+  font-size: 16pt;
   display: flex;
   align-items: center;
   justify-content: center;
